@@ -1,0 +1,32 @@
+page.includeCSS {
+	badges = EXT:badges/Resources/Public/Css/Main.css
+}
+
+plugin.tx_badges {
+	view {
+		templateRootPath = {$plugin.tx_badges.view.templateRootPath}
+		partialRootPath = {$plugin.tx_badges.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_badges.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_badges.persistence.storagePid}
+		classes {
+			Tx_Badges_Domain_Model_User {
+				mapping {
+					tableName = fe_users
+				}
+			}
+		}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+		# only for TYPO3 >= 4.6
+		skipDefaultArguments = 1
+	}
+	settings {
+		listCount = {$plugin.tx_badges.settings.listCount}
+		paginateAbove = {$plugin.tx_badges.settings.paginateAbove}
+		paginateBelow = {$plugin.tx_badges.settings.paginateBelow}
+	}
+}

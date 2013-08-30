@@ -1,0 +1,19 @@
+plugin.tx_badges {
+	view {
+		# cat=plugin.tx_badges/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:badges/Resources/Private/Templates/
+		# cat=plugin.tx_badges/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:badges/Resources/Private/Partials/
+		# cat=plugin.tx_badges/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:badges/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_badges//a; type=string; label=Default storage PID
+		storagePid =
+	}
+	settings {
+		listCount = 5
+		paginateAbove = 0
+		paginateBelow = 1
+	}
+}

@@ -1,0 +1,70 @@
+{namespace vh=Tx_Badges_ViewHelper}
+
+<div class="tx-badges-list">
+	<f:form action="listUncached" method="post">
+		<h3><f:translate key="searchByUser" />:</h3>
+		<p>
+			<f:form.textfield name="search" value="{search}" />
+		</p>
+		<h3><f:translate key="searchByCategory" />:</h3>
+		<p>
+			<f:form.select name="category" value="{category}" options="{categories}" optionValueField="uid" optionLabelField="title" />
+		</p>
+		<h3><f:translate key="searchByCountry" />:</h3>
+		<p>
+			<f:form.select name="country" value="{country}" options="{countries}" optionValueField="country" optionLabelField="country" />
+		</p>
+		<p>
+			<f:form.submit name="submit" value="{f:translate(key:'submit')}" />
+		</p>
+	</f:form>
+	<ul class="a2z">
+		<li><f:link.action class="{f:if(condition: '{letter}', then: '', else: 'act')}"><f:translate key="all" /></f:link.action></li>
+		<f:for each="{65:'A', 66:'B', 67:'C', 68:'D', 69:'E', 70:'F', 71:'G', 72:'H', 73:'I', 74:'J', 75:'K', 76:'L', 77:'M', 78:'N', 79:'O', 80:'P', 81:'Q', 82:'R', 83:'S', 84:'T', 85:'U', 86:'V', 87:'W', 88:'X', 89:'Y', 90:'Z'}" as="l" key="id">
+			<li><f:link.action arguments="{letter: l}" class="{f:if(condition: '{l} == {letter}', then: 'act')}">{l}</f:link.action></li>
+		</f:for>
+	</ul>
+
+	<p><f:translate key="found" />: <f:count subject="{users}" /></p>
+
+	<f:if condition="{users}">
+		<f:then>
+			<f:widget.paginate objects="{users}" as="paginatedUsers" configuration="{itemsPerPage: settings.listCount, insertAbove: settings.paginateAbove, insertBelow: settings.paginateBelow}">
+				<table>
+					<tr>
+						<th nowrap><f:translate key="thUser" /></th>
+						<th nowrap><f:translate key="thCountry" /></th>
+						<th nowrap><f:translate key="thBadge" /></th>
+					</tr>
+					<f:for each="{paginatedUsers}" as="user">
+						<tr>
+							<td>
+								{user.username}
+								<f:if condition="{user.name}"> ({user.name})</f:if>
+							</td>
+							<td>{user.country}</td>
+							<td>
+								<f:for each="{user.badgesSorted}" as="badge">
+									<f:if condition="{vh:inList(list: categoriesUids, index: badge.category.uid)}">
+										{badge.category.title}
+										<f:if condition="{badge.dateStart}">
+											<f:translate key="dateStart" />: <f:format.date format="d.m.Y">@{badge.dateStart}</f:format.date>
+										</f:if>
+										<f:if condition="{badge.dateEnd}">
+											<f:translate key="dateEnd" />: <f:format.date format="d.m.Y">@{badge.dateEnd}</f:format.date>
+										</f:if>
+										<br />
+									</f:if>
+								</f:for>
+							</td>
+						</tr>
+					</f:for>
+				</table>
+			</f:widget.paginate>
+		</f:then>
+		<f:else>
+			<p><f:translate key="noResults" /></p>
+		</f:else>
+	</f:if>
+
+</div>

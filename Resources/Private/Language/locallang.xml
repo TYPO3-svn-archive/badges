@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Snippets extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="searchByUser">Search by user</label>
+			<label index="searchByCategory">Search by type</label>
+			<label index="searchByCountry">Search by country</label>
+			<label index="found">Found</label>
+			<label index="thUser">User</label>
+			<label index="thCountry">Country</label>
+			<label index="thBadge">Badge</label>
+			<label index="date">Certification date/expiration</label>
+			<label index="dateStart">Badge granted</label>
+			<label index="dateEnd">Expiration</label>
+			<label index="all">All</label>
+			<label index="submit">Search</label>
+			<label index="noResults">Sorry, no users found.</label>
+		</languageKey>
+	</data>
+</T3locallang>

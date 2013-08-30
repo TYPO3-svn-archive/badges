@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'badges'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_badges_domain_model_badge">Badge</label>
+			<label index="tx_badges_domain_model_badge.date_start">Date:</label>
+			<label index="tx_badges_domain_model_badge.date_end">Expiration date:</label>
+			<label index="tx_badges_domain_model_badge.category">Type:</label>
+			<label index="tx_badges_domain_model_category">Badge category</label>
+			<label index="tx_badges_domain_model_category.title">Title:</label>
+			<label index="tt_content.tab.badges">Badges</label>
+			<label index="fe_users.tx_badges_badge">Badges</label>
+		</languageKey>
+	</data>
+</T3locallang>

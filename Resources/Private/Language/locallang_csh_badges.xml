@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_badges_domain_model_badge</description>
+		<type>CSH</type>
+		<csh_table>tx_badges_domain_model_badge</csh_table>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="date_start.description">Date when badge is earned.</label>
+			<label index="date_end.description">Date when badge expires. The badge will not be hidden at this date, it is only displayed in frontend.</label>
+		</languageKey>
+	</data>
+</T3locallang>

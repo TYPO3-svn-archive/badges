@@ -1,0 +1,10 @@
+ul.a2z {
+	list-style-type: none;
+}
+ul.a2z li {
+	padding: 0;
+	display: inline;
+}
+ul.a2z .act {
+	font-weight: bold;
+}
