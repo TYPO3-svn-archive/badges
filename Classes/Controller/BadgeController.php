@@ -64,8 +64,10 @@ class Tx_Badges_Controller_BadgeController extends Tx_Extbase_MVC_Controller_Act
 			$letter = 'all';
 		}
 		$categories = array();
-		foreach(t3lib_div::intExplode(',', $this->settings['category']) as $uid) {
-			$categories[] = $this->objectManager->get('Tx_Badges_Domain_Repository_CategoryRepository')->findByUid($uid);
+		if($this->settings['category']) {
+			foreach(t3lib_div::intExplode(',', $this->settings['category']) as $uid) {
+				$categories[] = $this->objectManager->get('Tx_Badges_Domain_Repository_CategoryRepository')->findByUid($uid);
+			}
 		}
 		$users = $this->objectManager->get('Tx_Badges_Domain_Repository_UserRepository')->findByBadges(
 			$category ? $category : $categories,

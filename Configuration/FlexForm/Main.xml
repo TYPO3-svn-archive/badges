@@ -21,10 +21,6 @@
 										<numIndex index="0">List</numIndex>
 										<numIndex index="1">Badge->list;Badge->listUncached</numIndex>
 									</numIndex>
-									<numIndex index="1">
-										<numIndex index="0">Show</numIndex>
-										<numIndex index="1">Badge->show</numIndex>
-									</numIndex>
 								</items>
 							</config>
 						</TCEforms>

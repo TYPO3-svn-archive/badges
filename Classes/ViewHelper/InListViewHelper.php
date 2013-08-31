@@ -34,15 +34,20 @@
 class Tx_Badges_ViewHelper_InListViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
 
 	/**
-	 * Checks if a value is in a comma separated list
+	 * Checks if a value is in a comma separated list.
+	 * If no list is provided, true is returned
 	 *
 	 * @param string $list
 	 * @param string $index
 	 * @return boolean
 	 */
 	public function render($list, $index) {
-		$array = t3lib_div::trimExplode(',', $list);
-		return in_array($index, $array);
+		if($list) {
+			$array = t3lib_div::trimExplode(',', $list);
+			return in_array($index, $array);
+		} else {
+			return true;
+		}
 	}
 }
 ?>
