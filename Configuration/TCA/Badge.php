@@ -6,10 +6,14 @@ if(!defined ('TYPO3_MODE')) {
 $TCA['tx_badges_domain_model_badge'] = array(
 	'ctrl' => $TCA['tx_badges_domain_model_badge']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'hidden, date_start, date_end, category, parentid, starttime, endtime',
+		'showRecordFieldList' => 'hidden, parentid, date_start, date_end, category, parentid, starttime, endtime',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'parentid, category, date_start, date_end, --div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access, hidden;;1, starttime, endtime'),
+		'1' => array('showitem' => 'parentid, category;;1, --div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access, hidden;;2'),
+	),
+	'palettes' => array(
+		'1' => array('showitem' => 'date_start, date_end'),
+		'2' => array('showitem' => 'starttime, endtime'),
 	),
 	'columns' => array(
 		'hidden' => array(
@@ -51,12 +55,12 @@ $TCA['tx_badges_domain_model_badge'] = array(
 				),
 			),
 		),
-		'tstamp' => Array (
+		/*'tstamp' => array(
 			'exclude' => 1,
 		),
-		'crdate' => Array (
+		'crdate' => array(
 			'exclude' => 1,
-		),
+		),*/
 		'date_start' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:badges/Resources/Private/Language/locallang_db.xml:tx_badges_domain_model_badge.date_start',
