@@ -33,31 +33,6 @@
 class Tx_Badges_Domain_Model_User extends Tx_Extbase_Domain_Model_FrontendUser {
 
 	/**
-	 * Settings
-	 *
-	 * @var array
-	 */
-	#protected $settings = array();
-
-	/**
-	 * Configuration manager
-	 *
-	 * @var Tx_Extbase_Configuration_ConfigurationManager
-	 */
-	#protected $configurationManager;
-
-	/**
-	 * Inject configuration manager
-	 *
-	 * @param Tx_Extbase_Configuration_ConfigurationManager $configurationManager
-	 * @return void
-	 */
-	#public function injectConfigurationManager(Tx_Extbase_Configuration_ConfigurationManager $configurationManager) {
-	#	$this->configurationManager = $configurationManager;
-	#	$this->settings = $this->configurationManager->getConfiguration(Tx_Extbase_Configuration_ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS);
-	#}
-
-	/**
 	 * tx_badges_badge
 	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Badges_Domain_Model_Badge>
