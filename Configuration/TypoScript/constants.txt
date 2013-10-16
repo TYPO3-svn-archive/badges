@@ -12,7 +12,7 @@ plugin.tx_badges {
 		storagePid =
 	}
 	settings {
-		listCount = 5
+		listCount = 25
 		paginateAbove = 0
 		paginateBelow = 1
 	}
