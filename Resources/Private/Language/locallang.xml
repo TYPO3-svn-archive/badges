@@ -6,7 +6,7 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="searchByUser">Search by user</label>
+			<label index="searchByUser">Search by name</label>
 			<label index="searchByCategory">Search by type</label>
 			<label index="searchByCountry">Search by country</label>
 			<label index="found">Found</label>
